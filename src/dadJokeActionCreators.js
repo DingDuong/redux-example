@@ -13,8 +13,8 @@ export function getDadJoke() {
       .get("https://icanhazdadjoke.com/", {
         headers: { Accept: "application/json" }
       })
-      .then(response => {
-        dispatch(getJoke(response.data.joke));
+      .then(({ data }) => {
+        dispatch(getJoke(data.joke));
       });
   };
 }
